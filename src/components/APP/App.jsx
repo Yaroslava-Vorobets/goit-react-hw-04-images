@@ -18,7 +18,7 @@ export default function App() {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState('false');
   const [error, setError] = useState(null);
-  const [IsBtnVisible,setIsBtnVisible] = useState(false);  
+  const [setIsBtnVisible] = useState(false);  
   
   
   useEffect(() => {
