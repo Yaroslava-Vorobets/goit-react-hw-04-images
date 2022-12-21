@@ -15,7 +15,9 @@ export default function Searchbar ({onSubmit}) {
         e.preventDefault()
         if  (query.trim()===''){
          return toast.error("please enter a request");                 
-       }       
+         } 
+       
+        onSubmit(query)
          setQuery('');
     };
 

@@ -7,30 +7,33 @@ import {Overlay, Modal} from './ModalStyled'
 const modalRoot = document.querySelector('#modal-root')
 
 export default function ModalComponent({ image, onClose }) {
-
-    const handleOverlayClick = e => {
-        if (e.currentTarget === e.target) {
-            onClose()
-        }
-    }
+  
     
     useEffect(() => {
 
         window.addEventListener('keydown', handlekeyDown);
-        const handlekeyDown = e => {
-            if (e.code === 'Escape') {
-                onClose()
-            }
-        }
+       
     
-        handleOverlayClick()
+      
         
         return () => {
             window.removeEventListener('keydown', handlekeyDown)
         }
         
       
-    }, [handleOverlayClick, onClose])
+    })
+
+      const handleOverlayClick = e => {
+        if (e.currentTarget === e.target) {
+            onClose()
+        }
+    }
+
+     const handlekeyDown = e => {
+            if (e.code === 'Escape') {
+                onClose()
+            }
+        }
 
     
    
