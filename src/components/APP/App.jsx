@@ -16,18 +16,18 @@ export default function App() {
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
   const [images, setImages] = useState([]);
-  const [loading, setLoading] = useState('false');
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [setIsBtnVisible] = useState(false);  
   
   
-  useEffect(() => {
-    if (query === '') {
-          return;
-        } else {
+      useEffect(() => { 
+        if (query === '') {
+          return
+        }else {
           FetchRequestApi.fetchRequest(query)
             .then(({ hits, totalHits }) => {
-              console.log('query:', query);
+           
               if (hits.length === 0) {
                 toast(`Sorry, there are no images matching your search query. Please try again.`);
                 return;
@@ -47,16 +47,15 @@ export default function App() {
             })
             .finally(() => setLoading(false))
   
-        }
+        }     
   
       }, [query, page]);
     
     const handleFormSubmit = query => {
-      setQuery( query);
+      setQuery(query);
       setLoading(true);
       setPage(1);
-      setImages([]);
-      setIsBtnVisible(false);
+      setImages([]);   
     }
     
     const loadMore = () => {

@@ -7,7 +7,7 @@ import ModalComponent from '../ModalFolder/Modal'
 
 
 export default function ImageElementItem({image}) {
-   const [showModal, setShowModal] = useState('false');
+   const [showModal, setShowModal] = useState(false);
  
 const toggleModal = () => setShowModal(showModal => !showModal);      
   const { webformatURL, tags } = image; 

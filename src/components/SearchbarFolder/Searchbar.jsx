@@ -8,16 +8,17 @@ export default function Searchbar ({onSubmit}) {
  
 
    const handleQueryChange = e => {
-         setQuery(e.currentTarget.value.toLowerCase())
+        setQuery( e.currentTarget.value.toLowerCase())       
    }
 
      const handleSubmit = e => {
-        e.preventDefault()
+         e.preventDefault()
         if  (query.trim()===''){
          return toast.error("please enter a request");                 
          } 
        
-        onSubmit(query)
+         onSubmit(query)
+         
          setQuery('');
     };
 
