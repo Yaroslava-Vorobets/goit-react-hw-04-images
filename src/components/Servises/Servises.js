@@ -1,0 +1,1 @@
+ export const KEYAPI = '30652229-d54eee621831264e80866ca26';
